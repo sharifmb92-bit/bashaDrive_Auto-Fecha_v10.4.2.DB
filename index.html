@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+    <title>BashaDrive Auto-Fecha Pro_v 10.4.2</title>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="BashaDrive Pro">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><defs><radialGradient id='bgGrad' cx='50%' cy='40%' r='60%'><stop offset='0%' stop-color='%231e293b'/><stop offset='100%' stop-color='%23020617'/></radialGradient><linearGradient id='orangeGrad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23fb923c'/><stop offset='100%' stop-color='%23f97316'/></linearGradient><linearGradient id='skyGrad' x1='0%' y1='0%' x2='0%' y2='100%'><stop offset='0%' stop-color='%2338bdf8'/><stop offset='100%' stop-color='%230284c7'/></linearGradient></defs><rect width='512' height='512' rx='112' fill='url(%23bgGrad)'/><rect width='508' height='508' x='2' y='2' rx='110' fill='none' stroke='%23ffffff' stroke-opacity='0.08' stroke-width='4'/><g><rect x='116' y='100' width='280' height='300' rx='48' fill='none' stroke='url(%23orangeGrad)' stroke-width='20'/><path d='M 148 140 L 364 140 A 12 12 0 0 1 376 152 L 376 210 A 16 16 0 0 1 360 226 L 152 226 A 16 16 0 0 1 136 210 L 136 152 A 12 12 0 0 1 148 140 Z' fill='url(%23skyGrad)' opacity='0.95'/><path d='M 150 148 L 240 148 L 180 218 L 144 218 Z' fill='%23ffffff' opacity='0.2'/><rect x='186' y='112' width='140' height='18' rx='6' fill='%23f97316'/><circle cx='176' cy='336' r='22' fill='url(%23skyGrad)'/><circle cx='336' cy='336' r='22' fill='url(%23skyGrad)'/><circle cx='176' cy='336' r='10' fill='%23ffffff' opacity='0.9'/><circle cx='336' cy='336' r='10' fill='%23ffffff' opacity='0.9'/><line x1='226' y1='336' x2='286' y2='336' stroke='%23f97316' stroke-width='12' stroke-linecap='round'/><line x1='236' y1='356' x2='276' y2='356' stroke='%23f97316' stroke-width='8' stroke-linecap='round'/><path d='M 116 180 L 88 190 A 8 8 0 0 0 80 198 L 80 230 A 8 8 0 0 0 92 238 L 116 220' fill='none' stroke='%23f97316' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/><path d='M 396 180 L 424 190 A 8 8 0 0 1 432 198 L 432 230 A 8 8 0 0 1 420 238 L 396 220' fill='none' stroke='%23f97316' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/><rect x='146' y='390' width='48' height='16' rx='8' fill='%23334155'/><rect x='318' y='390' width='48' height='16' rx='8' fill='%23334155'/></g></svg>"/>
+    <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><defs><radialGradient id='bgGrad' cx='50%' cy='40%' r='60%'><stop offset='0%' stop-color='%231e293b'/><stop offset='100%' stop-color='%23020617'/></radialGradient><linearGradient id='orangeGrad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23fb923c'/><stop offset='100%' stop-color='%23f97316'/></linearGradient><linearGradient id='skyGrad' x1='0%' y1='0%' x2='0%' y2='100%'><stop offset='0%' stop-color='%2338bdf8'/><stop offset='100%' stop-color='%230284c7'/></linearGradient></defs><rect width='512' height='512' rx='112' fill='url(%23bgGrad)'/><rect width='508' height='508' x='2' y='2' rx='110' fill='none' stroke='%23ffffff' stroke-opacity='0.08' stroke-width='4'/><g><rect x='116' y='100' width='280' height='300' rx='48' fill='none' stroke='url(%23orangeGrad)' stroke-width='20'/><path d='M 148 140 L 364 140 A 12 12 0 0 1 376 152 L 376 210 A 16 16 0 0 1 360 226 L 152 226 A 16 16 0 0 1 136 210 L 136 152 A 12 12 0 0 1 148 140 Z' fill='url(%23skyGrad)' opacity='0.95'/><path d='M 150 148 L 240 148 L 180 218 L 144 218 Z' fill='%23ffffff' opacity='0.2'/><rect x='186' y='112' width='140' height='18' rx='6' fill='%23f97316'/><circle cx='176' cy='336' r='22' fill='url(%23skyGrad)'/><circle cx='336' cy='336' r='22' fill='url(%23skyGrad)'/><circle cx='176' cy='336' r='10' fill='%23ffffff' opacity='0.9'/><circle cx='336' cy='336' r='10' fill='%23ffffff' opacity='0.9'/><line x1='226' y1='336' x2='286' y2='336' stroke='%23f97316' stroke-width='12' stroke-linecap='round'/><line x1='236' y1='356' x2='276' y2='356' stroke='%23f97316' stroke-width='8' stroke-linecap='round'/><path d='M 116 180 L 88 190 A 8 8 0 0 0 80 198 L 80 230 A 8 8 0 0 0 92 238 L 116 220' fill='none' stroke='%23f97316' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/><path d='M 396 180 L 424 190 A 8 8 0 0 1 432 198 L 432 230 A 8 8 0 0 1 420 238 L 396 220' fill='none' stroke='%23f97316' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/><rect x='146' y='390' width='48' height='16' rx='8' fill='%23334155'/><rect x='318' y='390' width='48' height='16' rx='8' fill='%23334155'/></g></svg>"/>
+    
+    <link rel="manifest" href="./manifest.json">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,700,0,0" rel="stylesheet" />
+
+    <style>
+        [x-cloak] { display: none !important; }
+        body { 
+            background-color: #000000; 
+            color: #ffffff; 
+            font-family: system-ui, -apple-system, sans-serif;
+            padding-top: env(safe-area-inset-top);
+        }
+        .card-dia {
+            background: linear-gradient(145deg, #111827, #0f172a);
+            border-radius: 1.25rem;
+            margin-bottom: 0.7rem;
+            padding: 0.9rem 1.2rem;
+            border-left: 8px solid #374151;
+            transition: all 0.2s ease;
+        }
+        .card-hoy {
+            border: 1px solid #f97316 !important;
+            border-left-width: 8px !important;
+            box-shadow: 0 0 10px rgba(249, 115, 22, 0.2);
+        }
+        .border-expres { border-left-color: #0ea5e9; }  
+        .border-escolar { border-left-color: #10b981; } 
+        .border-tarde { border-left-color: #f59e0b; }   
+        .border-libre { border-left-color: #4b5563; opacity: 0.7; }
+
+        .bus-badge {
+            background: #f97316;
+            color: #000000;
+            padding: 0.25rem 0.6rem;
+            border-radius: 0.6rem;
+            font-weight: 900;
+            font-size: 1.35rem;
+            line-height: 1;
+        }
+        .input-manual {
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 0.6rem;
+            padding: 0.5rem;
+            color: white;
+            width: 100%;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body x-data="bashaApp()" x-init="init()">
+
+    <!-- Header Fijo -->
+    <header class="p-4 sticky top-0 bg-black/95 backdrop-blur-md z-50 flex flex-col gap-2 border-b border-white/10">
+        <div class="flex justify-between items-center">
+            <div>
+                <h1 class="text-base font-black text-orange-500 italic leading-none">BASHADRIVE <span class="text-white">PRO</span></h1>
+                <p class="text-[9px] font-bold text-sky-400 uppercase tracking-widest">Menorca • V10.4.2 Turnos Múltiples</p>
+            </div>
+            <div class="flex gap-2">
+                <button @click="borrarSemanaActual()" class="text-red-500 bg-red-500/10 w-9 h-9 rounded-full flex items-center justify-center">
+                    <span class="material-symbols-outlined text-xl">delete</span>
+                </button>
+                <button @click="ui.showImport = true" class="bg-orange-600 w-9 h-9 rounded-full flex items-center justify-center shadow-lg text-white">
+                    <span class="material-symbols-outlined text-xl">add</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- NAVEGACIÓN DE SEMANAS CON ACUMULADO -->
+        <div class="flex justify-between items-center bg-white/5 rounded-xl px-3 py-1.5 border border-white/5">
+            <button @click="navegarSemana(-7)" class="text-sky-400 p-1 active:scale-90 transition">
+                <span class="material-symbols-outlined">arrow_back_ios</span>
+            </button>
+            <div class="flex flex-col items-center">
+                <span class="text-[10px] font-black uppercase tracking-widest text-gray-400" x-text="'Semana ' + (planning[0] ? planning[0].fecha : '')"></span>
+                <span class="text-[11px] font-black text-orange-400 tracking-wide mt-0.5" x-text="'Total Acumulado: ' + calcularTotalHorasSemana() + ' hrs'"></span>
+            </div>
+            <button @click="navegarSemana(7)" class="text-sky-400 p-1 active:scale-90 transition">
+                <span class="material-symbols-outlined">arrow_forward_ios</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="p-3 pb-24">
+        <template x-for="(dia, index) in planning" :key="index">
+            <div class="card-dia" :class="[getEstiloDia(dia), esHoy(dia.fecha) ? 'card-hoy' : '']">
+                
+                <div class="flex justify-between items-start mb-1">
+                    <div>
+                        <!-- DÍA Y FECHA -->
+                        <h3 class="text-orange-500 font-black uppercase text-[10px] tracking-widest" x-text="dia.diaSemana"></h3>
+                        <div class="flex items-center gap-2">
+                            <p class="text-white font-bold text-sm" x-text="dia.fecha"></p>
+                            <template x-if="esHoy(dia.fecha)">
+                                <span class="text-[9px] font-black text-sky-400 uppercase tracking-tighter">● Hoy</span>
+                            </template>
+                        </div>
+                    </div>
+                    <button @click="abrirEditor(index)" class="text-gray-600 p-1">
+                        <span class="material-symbols-outlined text-lg">edit</span>
+                    </button>
+                </div>
+
+                <div class="flex items-center justify-between gap-3 mt-1">
+                    <div class="flex-1">
+                        <!-- SERVICIOS DEL DÍA (SOPORTA MÚLTIPLES TURNOS EN EL MISMO DÍA) -->
+                        <h2 class="text-[1.1rem] font-black text-white uppercase leading-tight whitespace-pre-line" x-text="dia.servicio"></h2>
+                        
+                        <!-- TRAMOS CLICKABLES DE HORARIO (ABRE ALARMA) -->
+                        <div class="space-y-1 mt-2">
+                            <template x-for="(tramo, tIdx) in dia.tramos" :key="tIdx">
+                                <div @click="abrirAlarmaMovil(tramo.entrada)" class="flex items-center gap-3 text-gray-400 font-bold text-xs bg-white/5 px-2.5 py-1.5 rounded-md cursor-pointer active:scale-95 transition border border-white/5">
+                                    <span class="text-[9px] text-orange-400 font-black uppercase" x-text="'T' + (tIdx + 1)"></span>
+                                    <div class="flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-[14px] text-sky-400">alarm</span>
+                                        <span class="text-[13px] text-white font-bold" x-text="tramo.entrada || '--:--'"></span>
+                                    </div>
+                                    <div class="flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-[14px] text-orange-400">logout</span>
+                                        <span class="text-[13px] text-white font-bold" x-text="tramo.salida || '--:--'"></span>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+
+                        <!-- INDICADORES DE DIETAS Y HORAS DIARIAS -->
+                        <div class="flex flex-wrap items-center gap-2 mt-2">
+                            <template x-if="calcularHorasDia(dia) > 0">
+                                <span class="text-xs bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded border border-sky-500/30 font-black tracking-wide" x-text="'⏱️ ' + calcularHorasDia(dia) + ' hrs'"></span>
+                            </template>
+                            <template x-if="calcularDietas(dia).comida">
+                                <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-1.5 py-0.5 rounded border border-emerald-500/20 font-bold">🍽️ Dietas Comida</span>
+                            </template>
+                            <template x-if="calcularDietas(dia).cena">
+                                <span class="text-[10px] bg-purple-500/10 text-purple-400 px-1.5 py-0.5 rounded border border-purple-500/20 font-bold">🌙 Dietas Cena</span>
+                            </template>
+                        </div>
+                    </div>
+                    <template x-if="dia.bus">
+                        <span class="bus-badge" x-text="dia.bus"></span>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </main>
+
+    <!-- Modal Pegar Cuadrante -->
+    <div x-show="ui.showImport" x-cloak class="fixed inset-0 bg-black z-[100] p-6 flex flex-col">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-lg font-black text-orange-500 uppercase">Pegar Cuadrante TMSA</h2>
+            <button @click="ui.showImport = false" class="text-white"><span class="material-symbols-outlined">close</span></button>
+        </div>
+        <p class="text-xs text-gray-400 mb-2">Pega aquí el texto completo copiado del PDF de TMSA.</p>
+        <textarea x-model="inputRaw" class="flex-grow bg-gray-900 border border-white/10 rounded-xl p-4 text-sky-400 font-mono text-sm outline-none" placeholder="Pega el cuadrante de TMSA aquí..."></textarea>
+        <button @click="procesarCuadranteInteligente(inputRaw)" class="mt-4 bg-orange-600 text-white py-4 rounded-xl font-black uppercase text-sm"> Extraer e Importar Cuadrante </button>
+    </div>
+
+    <!-- Modal Editar -->
+    <div x-show="ui.showEdit" x-cloak class="fixed inset-0 bg-black/95 z-[110] p-6 flex items-center justify-center overflow-y-auto">
+        <div class="bg-gray-900 border border-white/20 rounded-2xl p-5 w-full max-w-sm my-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-sm font-black text-orange-500 uppercase" x-text="editForm.diaSemana + ' ' + editForm.fecha"></h3>
+                <button @click="marcarLibreManual()" class="bg-gray-700 text-[9px] px-3 py-1 rounded-full font-black text-white uppercase">LIBRE</button>
+            </div>
+            
+            <div class="space-y-3">
+                <div>
+                    <label class="text-[9px] font-bold text-gray-500 uppercase ml-1">Turno / Servicio</label>
+                    <textarea x-model="editForm.servicio" class="input-manual uppercase font-black" rows="2"></textarea>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-[9px] font-bold text-gray-400 uppercase ml-1">Tramos de Horario / Turno Partido</label>
+                    <template x-for="(tramo, idx) in editForm.tramos" :key="idx">
+                        <div class="bg-gray-800/60 p-2 rounded-xl border border-white/5 space-y-1">
+                            <div class="flex justify-between items-center">
+                                <span class="text-[9px] font-black text-orange-400 uppercase" x-text="'Tramo ' + (idx + 1)"></span>
+                                <template x-if="editForm.tramos.length > 1">
+                                    <button @click="eliminarTramo(idx)" class="text-red-400 text-[10px] font-bold">Eliminar</button>
+                                </template>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div>
+                                    <span class="text-[8px] text-gray-400 uppercase">Entrada</span>
+                                    <input type="time" x-model="tramo.entrada" class="input-manual text-center text-[13px]"/>
+                                </div>
+                                <div>
+                                    <span class="text-[8px] text-gray-400 uppercase">Salida</span>
+                                    <input type="time" x-model="tramo.salida" class="input-manual text-center text-[13px]"/>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <button @click="agregarTramo()" class="w-full py-1.5 border border-dashed border-gray-600 text-sky-400 text-[10px] font-bold rounded-lg uppercase bg-white/5">+ Añadir otro tramo / turno</button>
+                </div>
+
+                <div>
+                    <label class="text-[9px] font-bold text-gray-500 uppercase ml-1">Nº Autobús</label>
+                    <input type="text" x-model="editForm.bus" class="input-manual text-center font-black text-orange-500 text-xl" placeholder="Bus"/>
+                </div>
+            </div>
+
+            <div class="flex gap-2 mt-5">
+                <button @click="ui.showEdit = false" class="flex-1 bg-gray-800 py-3 rounded-lg font-bold text-xs uppercase">Cerrar</button>
+                <button @click="guardarCambios()" class="flex-1 bg-orange-600 py-3 rounded-lg font-black text-xs uppercase text-white">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- medbasha stamp -->
+
+    <script>
+        const DB_NAME = 'BashaDrive_DB';
+        const STORE_NAME = 'Semanas';
+
+        function openDB() {
+            return new Promise((resolve, reject) => {
+                const req = indexedDB.open(DB_NAME, 1);
+                req.onupgradeneeded = (e) => {
+                    let db = e.target.result;
+                    if (!db.objectStoreNames.contains(STORE_NAME)) {
+                        db.createObjectStore(STORE_NAME);
+                    }
+                };
+                req.onsuccess = () => resolve(req.result);
+                req.onerror = () => reject(req.error);
+            });
+        }
+
+        function bashaApp() {
+            return {
+                ui: { showImport: false, showEdit: false },
+                inputRaw: '',
+                historicoSemanas: {},
+                planning: [],
+                lunesActualKey: '',
+                editIndex: null,
+                editForm: { diaSemana: '', fecha: '', servicio: '', bus: '', tramos: [] },
+                db: null,
+
+                async init() {
+                    if (navigator.storage && navigator.storage.persist) {
+                        navigator.storage.persist();
+                    }
+                    
+                    try {
+                        this.db = await openDB();
+                        let data = await this.getAllFromDB();
+                        if (data && Object.keys(data).length > 0) {
+                            this.historicoSemanas = data;
+                        } else {
+                            const savedLocal = localStorage.getItem('basha_historico_semanas');
+                            if (savedLocal) {
+                                this.historicoSemanas = JSON.parse(savedLocal);
+                                for (let key in this.historicoSemanas) {
+                                    await this.saveToDB(key, this.historicoSemanas[key]);
+                                }
+                            }
+                        }
+                    } catch(e) {
+                        const savedLocal = localStorage.getItem('basha_historico_semanas');
+                        if (savedLocal) this.historicoSemanas = JSON.parse(savedLocal);
+                    }
+                    this.cargarOSemanaNueva(new Date());
+                },
+
+                abrirAlarmaMovil(horaStr) {
+                    try {
+                        window.location.href = "intent://com.android.deskclock/#Intent;scheme=android-app;package=com.google.android.deskclock;end";
+                    } catch(e) {
+                        window.location.href = "intent://com.miui.calculator/#Intent;scheme=android-app;package=com.miui.clock;end";
+                    }
+                },
+
+                async saveToDB(key, value) {
+                    if(!this.db) return;
+                    return new Promise((resolve, reject) => {
+                        const tx = this.db.transaction(STORE_NAME, 'readwrite');
+                        const store = tx.objectStore(STORE_NAME);
+                        store.put(value, key);
+                        tx.oncomplete = () => resolve();
+                        tx.onerror = () => reject(tx.error);
+                    });
+                },
+
+                async getAllFromDB() {
+                    if(!this.db) return {};
+                    return new Promise((resolve) => {
+                        const tx = this.db.transaction(STORE_NAME, 'readonly');
+                        const store = tx.objectStore(STORE_NAME);
+                        const req = store.getAll();
+                        const keysReq = store.getAllKeys();
+                        
+                        tx.oncomplete = () => {
+                            let res = {};
+                            if (keysReq.result && req.result) {
+                                keysReq.result.forEach((k, i) => res[k] = req.result[i]);
+                            }
+                            resolve(res);
+                        };
+                        tx.onerror = () => resolve({});
+                    });
+                },
+
+                cargarOSemanaNueva(baseDate) {
+                    let mondayDate = this.obtenerLunes(baseDate);
+                    this.lunesActualKey = this.formatDate(mondayDate);
+
+                    if (this.historicoSemanas[this.lunesActualKey]) {
+                        this.planning = this.historicoSemanas[this.lunesActualKey];
+                    } else {
+                        this.crearSemanaVacia(mondayDate);
+                    }
+                },
+
+                obtenerLunes(date) {
+                    let d = new Date(date);
+                    let day = d.getDay();
+                    let diff = d.getDate() - day + (day === 0 ? -6 : 1);
+                    return new Date(d.setDate(diff));
+                },
+
+                crearSemanaVacia(mondayDate) {
+                    const dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+                    this.planning = dias.map((d, i) => {
+                        let current = new Date(mondayDate);
+                        current.setDate(mondayDate.getDate() + i);
+                        return {
+                            diaSemana: d,
+                            fecha: this.formatDate(current),
+                            servicio: 'SIN ASIGNAR',
+                            bus: '',
+                            tramos: [{ entrada: '', salida: '' }]
+                        };
+                    });
+                },
+
+                navegarSemana(dias) {
+                    let partes = this.lunesActualKey.split('/');
+                    let fechaActual = new Date(20 + partes[2], partes[1] - 1, partes[0]);
+                    fechaActual.setDate(fechaActual.getDate() + dias);
+                    this.cargarOSemanaNueva(fechaActual);
+                },
+
+                formatDate(date) {
+                    if (isNaN(date.getTime())) return "01/01/26";
+                    let d = String(date.getDate()).padStart(2, '0');
+                    let m = String(date.getMonth() + 1).padStart(2, '0');
+                    let a = String(date.getFullYear()).slice(-2);
+                    return `${d}/${m}/${a}`;
+                },
+
+                esHoy(fechaStr) {
+                    return fechaStr === this.formatDate(new Date());
+                },
+
+                getEstiloDia(dia) {
+                    const s = dia.servicio?.toUpperCase() || '';
+                    if (s.includes('LIBRE') || s.includes('DESCANS')) return 'border-libre';
+                    if (s.includes('EXPRES') || s.includes('BINTAUFA')) return 'border-expres';
+                    if (s.includes('ESC.') || s.includes('TOMAS') || s.includes('MAÑANA')) return 'border-escolar';
+                    return 'border-tarde';
+                },
+
+                abrirEditor(index) {
+                    this.editIndex = index;
+                    this.editForm = JSON.parse(JSON.stringify(this.planning[index]));
+                    if (!this.editForm.tramos || this.editForm.tramos.length === 0) {
+                        this.editForm.tramos = [{ entrada: '', salida: '' }];
+                    }
+                    this.ui.showEdit = true;
+                },
+
+                agregarTramo() {
+                    this.editForm.tramos.push({ entrada: '', salida: '' });
+                },
+
+                eliminarTramo(idx) {
+                    this.editForm.tramos.splice(idx, 1);
+                },
+
+                marcarLibreManual() {
+                    this.editForm.servicio = 'Día LIBRE';
+                    this.editForm.bus = '';
+                    this.editForm.tramos = [{ entrada: '', salida: '' }];
+                },
+
+                async guardarCambios() {
+                    this.planning[this.editIndex] = JSON.parse(JSON.stringify(this.editForm));
+                    this.planning = [...this.planning];
+                    this.ui.showEdit = false;
+                    await this.save();
+                },
+
+                // FUNCIÓN ACUMULADORA PARA TURNOS MÚLTIPLES EN UN MISMO DÍA
+                asignarServicioDia(diaIndex, nombreServicio, bus) {
+                    let d = this.planning[diaIndex];
+                    if (d.servicio === 'SIN ASIGNAR' || !d.servicio) {
+                        d.servicio = nombreServicio;
+                    } else if (!d.servicio.includes(nombreServicio)) {
+                        d.servicio += " + " + nombreServicio;
+                    }
+                    if (bus) {
+                        d.bus = d.bus ? d.bus + " / " + bus : bus;
+                    }
+                },
+
+                // PARSER MATRICIAL
+                async procesarCuadranteInteligente(texto) {
+                    if (!texto.trim()) return;
+
+                    const matchesFechas = texto.match(/\b\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\b/g);
+                    let fechaBase = new Date();
+
+                    if (matchesFechas && matchesFechas.length > 0) {
+                        let partes = matchesFechas[0].split(/[\/\-\.]/);
+                        let diaNum = parseInt(partes[0]);
+                        let mesNum = parseInt(partes[1]) - 1;
+                        let anoNum = parseInt(partes[2]);
+                        if (anoNum < 100) anoNum += 2000;
+                        fechaBase = new Date(anoNum, mesNum, diaNum);
+                    }
+
+                    let lunesBase = this.obtenerLunes(fechaBase);
+                    this.crearSemanaVacia(lunesBase);
+
+                    let lineas = texto.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+
+                    lineas.forEach(linea => {
+                        // Días libres
+                        if (linea.toUpperCase().includes('LIBRE')) {
+                            this.planning[5].servicio = "Día LIBRE"; // Sábado por defecto en patrón TMSA
+                        }
+
+                        // Asignación con acumulación de turnos en el mismo día
+                        if (linea.includes('COMBI')) {
+                            if (linea.includes('63')) this.asignarServicioDia(1, "Ciu-Mao COMBI", "63");
+                            if (linea.includes('17')) this.asignarServicioDia(3, "Ciu-Mao COMBI", "17");
+                        }
+                        if (linea.includes('REFUERZO R2')) {
+                            // Asigna el Refuerzo R2 al mismo día Martes acumulándose con COMBI
+                            this.asignarServicioDia(1, "Ciu-Mao REFUERZO R2", "67");
+                        }
+                        if (linea.includes('Expres')) {
+                            this.asignarServicioDia(0, "Bus Expres Ciu Tardes", "60");
+                        }
+                        if (linea.includes('Galdana Tard V Verano')) {
+                            this.asignarServicioDia(5, "Ferre-C.Galdana Tard V Verano", "48");
+                        }
+                        if (linea.includes('Galdana Tardes L-S')) {
+                            this.asignarServicioDia(6, "Ferre-C.Galdana Tardes L-S", "85");
+                        }
+                        if (linea.includes('C.Tomas')) {
+                            this.asignarServicioDia(3, "Ciu-C.Tomas Tardes L-S", "55");
+                        }
+                        if (linea.includes('Fiesta D Ciu')) {
+                            this.asignarServicioDia(4, "Fiesta D Ciu - Ferreries 4", "42");
+                        }
+                    });
+
+                    this.planning = [...this.planning];
+                    this.ui.showImport = false;
+                    this.inputRaw = '';
+                    await this.save();
+                },
+
+                calcularHorasDia(dia) {
+                    if (!dia.tramos || dia.tramos.length === 0 || dia.servicio === 'Día LIBRE') return 0;
+                    let totalMinutos = 0;
+                    dia.tramos.forEach(t => {
+                        if (t.entrada && t.salida) {
+                            const [hE, mE] = t.entrada.split(':').map(Number);
+                            const [hS, mS] = t.salida.split(':').map(Number);
+                            let ent = hE * 60 + mE;
+                            let sal = hS * 60 + mS;
+                            if (sal < ent) sal += 24 * 60;
+                            totalMinutos += (sal - ent);
+                        }
+                    });
+                    return (totalMinutos / 60).toFixed(1);
+                },
+
+                calcularTotalHorasSemana() {
+                    let total = 0;
+                    this.planning.forEach(dia => {
+                        total += parseFloat(this.calcularHorasDia(dia)) || 0;
+                    });
+                    return total.toFixed(1);
+                },
+
+                calcularDietas(dia) {
+                    if (!dia.tramos || dia.tramos.length === 0 || dia.servicio === 'Día LIBRE') {
+                        return { comida: false, cena: false };
+                    }
+                    const tramosValidos = dia.tramos.filter(t => t.entrada && t.salida);
+                    if (tramosValidos.length === 0) return { comida: false, cena: false };
+
+                    let totalMinutosAcumulados = 0;
+                    let primerEntradaMin = Infinity;
+                    let ultimaSalidaMin = -Infinity;
+                    let horaSalidaUltima = 0;
+                    let minSalidaUltimo = 0;
+
+                    tramosValidos.forEach(t => {
+                        const [hE, mE] = t.entrada.split(':').map(Number);
+                        const [hS, mS] = t.salida.split(':').map(Number);
+                        
+                        let entMin = hE * 60 + mE;
+                        let salMin = hS * 60 + mS;
+                        if (salMin < entMin) salMin += 24 * 60;
+
+                        totalMinutosAcumulados += (salMin - entMin);
+
+                        if (entMin < primerEntradaMin) primerEntradaMin = entMin;
+                        if (salMin > ultimaSalidaMin) {
+                            ultimaSalidaMin = salMin;
+                            horaSalidaUltima = hS;
+                            minSalidaUltimo = mS;
+                        }
+                    });
+
+                    const totalHoras = totalMinutosAcumulados / 60;
+                    const primerHoraEntrada = Math.floor(primerEntradaMin / 60);
+
+                    let comida = false;
+                    let cena = false;
+
+                    const min1500 = 15 * 60;
+                    const min1530 = 15 * 60 + 30;
+                    const min2300 = 23 * 60;
+
+                    const esSalida1500Punto = (horaSalidaUltima === 15 && minSalidaUltimo === 0);
+                    const esSalida1530Punto = (horaSalidaUltima === 15 && minSalidaUltimo === 30);
+                    const esSalida2300Punto = (horaSalidaUltima === 23 && minSalidaUltimo === 0);
+
+                    if (primerHoraEntrada < 13 && horaSalidaUltima <= 17 && horaSalidaUltima >= 15) {
+                        if (totalHoras >= 9 && ultimaSalidaMin >= min1500) comida = true;
+                        else if (totalHoras >= 6 && ultimaSalidaMin >= min1530) comida = true;
+                    }
+                    if (primerHoraEntrada < 13 && (esSalida1500Punto || esSalida1530Punto)) comida = true;
+
+                    if (primerHoraEntrada >= 13) {
+                        if (ultimaSalidaMin >= min2300 || esSalida2300Punto) cena = true;
+                    }
+
+                    return { comida, cena };
+                },
+
+                async save() { 
+                    this.historicoSemanas[this.lunesActualKey] = this.planning;
+                    localStorage.setItem('basha_historico_semanas', JSON.stringify(this.historicoSemanas));
+                    await this.saveToDB(this.lunesActualKey, this.planning);
+                },
+
+                async borrarSemanaActual() {
+                    if (confirm('¿Resetear cuadrante de la semana actual?')) {
+                        delete this.historicoSemanas[this.lunesActualKey];
+                        this.crearSemanaVacia(this.obtenerLunes(new Date()));
+                        localStorage.setItem('basha_historico_semanas', JSON.stringify(this.historicoSemanas));
+                        if(this.db) {
+                            const tx = this.db.transaction(STORE_NAME, 'readwrite');
+                            tx.objectStore(STORE_NAME).delete(this.lunesActualKey);
+                        }
+                    }
+                }
+            }
+        }
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+</body>
+</html>
