@@ -1,0 +1,15 @@
+{
+  "name": "BashaDrive Pro",
+  "short_name": "BashaDrive",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><defs><radialGradient id='bgGrad' cx='50%' cy='40%' r='60%'><stop offset='0%' stop-color='%231e293b'/><stop offset='100%' stop-color='%23020617'/></radialGradient><linearGradient id='orangeGrad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='%23fb923c'/><stop offset='100%' stop-color='%23f97316'/></linearGradient><linearGradient id='skyGrad' x1='0%' y1='0%' x2='0%' y2='100%'><stop offset='0%' stop-color='%2338bdf8'/><stop offset='100%' stop-color='%230284c7'/></linearGradient></defs><rect width='512' height='512' rx='112' fill='url(%23bgGrad)'/><rect width='508' height='508' x='2' y='2' rx='110' fill='none' stroke='%23ffffff' stroke-opacity='0.08' stroke-width='4'/><g><rect x='116' y='100' width='280' height='300' rx='48' fill='none' stroke='url(%23orangeGrad)' stroke-width='20'/><path d='M 148 140 L 364 140 A 12 12 0 0 1 376 152 L 376 210 A 16 16 0 0 1 360 226 L 152 226 A 16 16 0 0 1 136 210 L 136 152 A 12 12 0 0 1 148 140 Z' fill='url(%23skyGrad)' opacity='0.95'/><path d='M 150 148 L 240 148 L 180 218 L 144 218 Z' fill='%23ffffff' opacity='0.2'/><rect x='186' y='112' width='140' height='18' rx='6' fill='%23f97316'/><circle cx='176' cy='336' r='22' fill='url(%23skyGrad)'/><circle cx='336' cy='336' r='22' fill='url(%23skyGrad)'/><circle cx='176' cy='336' r='10' fill='%23ffffff' opacity='0.9'/><circle cx='336' cy='336' r='10' fill='%23ffffff' opacity='0.9'/><line x1='226' y1='336' x2='286' y2='336' stroke='%23f97316' stroke-width='12' stroke-linecap='round'/><line x1='236' y1='356' x2='276' y2='356' stroke='%23f97316' stroke-width='8' stroke-linecap='round'/><path d='M 116 180 L 88 190 A 8 8 0 0 0 80 198 L 80 230 A 8 8 0 0 0 92 238 L 116 220' fill='none' stroke='%23f97316' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/><path d='M 396 180 L 424 190 A 8 8 0 0 1 432 198 L 432 230 A 8 8 0 0 1 420 238 L 396 220' fill='none' stroke='%23f97316' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/><rect x='146' y='390' width='48' height='16' rx='8' fill='%23334155'/><rect x='318' y='390' width='48' height='16' rx='8' fill='%23334155'/></g></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
